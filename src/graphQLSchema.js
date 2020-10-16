@@ -5,24 +5,24 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { mergeSchemas } from './utilities';
 
 import {
-	userMutations,
-	userQueries,
-	userTypeDef
-} from './supermarket/categories/typeDefs';
+	perfilTypeDef,
+	perfilQueries,
+	perfilMutations
+}from './perfiles/categories/typeDefs'
 
-import userResolvers from './supermarket/categories/resolvers';
+import perfileResolvers from './perfiles/categories/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		userTypeDef
+		perfilTypeDef
 	],
 	[
-		userQueries
+		perfilQueries
 	],
 	[
-		userMutations
+		perfilMutations
 	]
 );
 
@@ -31,6 +31,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		userResolvers
+		perfileResolvers
 	)
 });
