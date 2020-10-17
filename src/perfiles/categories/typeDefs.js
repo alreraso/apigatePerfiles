@@ -12,21 +12,21 @@ export const perfilTypeDef = `
       descripcion: String!
   }
   input PerfilInput {
-      id: Int!
-      nombre: String!
-      segundoNombre: String!
-      apellido: String!
-      segundoApellido: String!
-      email: String!
-      constrasena: String!
-      estado: Boolean!
-      ubicacion: String!
-      descripcion: String!
+      id: Int
+      nombre: String
+      segundoNombre: String
+      apellido: String
+      segundoApellido: String
+      email: String
+      constrasena: String
+      estado: Boolean
+      ubicacion: String
+      descripcion: String
   }`;
 
 export const perfilQueries = `
       allPerfiles: [Perfil]!
-      categoryById(id: Int!): Perfil!
+      profileById(id: Int!): Perfil!
   `;
 
 export const perfilMutations = `
